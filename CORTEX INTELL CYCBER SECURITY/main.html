@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cortex-Intell | AI-Powered Cyber Threat Intelligence Platform</title>
+    <meta name="description" content="Advanced AI-powered cybersecurity platform for real-time threat detection, malware analysis, and security protection">
+    <meta name="keywords" content="cybersecurity, threat detection, AI security, malware analysis, virus protection, network security">
+    <meta name="author" content="Cortex-Intell Security">
+    
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon" aria-hidden="true">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span>Cortex-Intell</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#dashboard" class="nav-link" aria-current="page">
+                    <i class="fas fa-chart-pie" aria-hidden="true"></i>
+                    Dashboard
+                </a>
+                <a href="#threat-intel" class="nav-link">
+                    <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                    Threat Intel
+                </a>
+                <a href="#security-score" class="nav-link">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    Security Score
+                </a>
+                <a href="#training" class="nav-link">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    Training
+                </a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" role="banner">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-bolt" aria-hidden="true"></i>
+                        AI-Powered Security Platform
+                    </div>
+                    <h1 class="hero-title">
+                        Your Shield Against
+                        <span class="gradient-text">Cyber Threats</span>
+                    </h1>
+                    <p class="hero-description">
+                        Enterprise-grade threat detection, automated security analysis, and actionable insights 
+                        powered by cutting-edge artificial intelligence and machine learning algorithms.
+                    </p>
+                    <!-- Replace the existing hero actions in main.html -->
+                     <div class="hero-actions">
+                        <a href="instant-scan.html" class="btn btn-primary">
+                            <i class="fas fa-play" aria-hidden="true"></i>
+                            Start Security Scan
+                        </a>
+                        <a href="platform-overview.html" class="btn btn-secondary">
+                            <i class="fas fa-eye" aria-hidden="true"></i>
+                            Platform Overview
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-value" id="totalScans">12</div>
+                            <div class="stat-label">Total Scans</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="threatsFound">2</div>
+                            <div class="stat-label">Threats Blocked</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="completion">85%</div>
+                            <div class="stat-label">Protection</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Improved Hero Visual -->
+                <div class="hero-visual">
+                    <div class="security-visual">
+                        <div class="security-visual-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>AI Protection Active</h3>
+                        <p>Real-time monitoring & threat detection</p>
+                        <div class="security-visual-stats">
+                            <div class="security-stat">
+                                <div class="security-stat-value">99.9%</div>
+                                <div class="security-stat-label">Detection Rate</div>
+                            </div>
+                            <div class="security-stat">
+                                <div class="security-stat-value">24/7</div>
+                                <div class="security-stat-label">Monitoring</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions with Definitions -->
+        <section class="quick-actions section" aria-labelledby="quick-actions-title">
+            <div class="container">
+                <h2 class="section-title" id="quick-actions-title">Security Analysis Tools</h2>
+                <p class="section-subtitle">Comprehensive security tools powered by advanced AI algorithms</p>
+
+                <div class="actions-grid">
+                    <!-- Instant Scan -->
+                    <a href="instant-scan.html" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Instant System Scan</h3>
+                        <p class="tool-definition">
+                            <strong>Definition:</strong> Quick comprehensive security assessment of your entire system
+                        </p>
+                        <p class="tool-details">
+                            <strong>What it does:</strong> Scans system processes, registry entries, running services, and security configurations for potential threats and vulnerabilities.
+                        </p>
+                        <div class="action-badge">Quick Scan</div>
+                    </a>
+
+                    <!-- Website Check -->
+                    <a href="website-check.html" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Website Security Analysis</h3>
+                        <p class="tool-definition">
+                            <strong>Definition:</strong> Deep security analysis of any website URL
+                        </p>
+                        <p class="tool-details">
+                            <strong>What it does:</strong> Checks for malware, phishing attempts, SSL certificates, blacklist status, and security headers to ensure website safety.
+                        </p>
+                        <div class="action-badge">AI-Powered</div>
+                    </a>
+
+                    <!-- Content Analyzer -->
+                    <a href="content-analyzer.html" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Content Safety Scanner</h3>
+                        <p class="tool-definition">
+                            <strong>Definition:</strong> AI-powered content analysis for safety and appropriateness
+                        </p>
+                        <p class="tool-details">
+                            <strong>What it does:</strong> Uses Natural Language Processing to detect harmful content, hate speech, inappropriate material, and potential cyberbullying.
+                        </p>
+                        <div class="action-badge">NLP Engine</div>
+                    </a>
+
+                    <!-- File Analysis -->
+                    <a href="file-analysis.html" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-file-upload"></i>
+                        </div>
+                        <h3>File Malware Detection</h3>
+                        <p class="tool-definition">
+                            <strong>Definition:</strong> Comprehensive malware scanning for files and archives
+                        </p>
+                        <p class="tool-details">
+                            <strong>What it does:</strong> Analyzes executable files, documents, and archives using multiple antivirus engines and behavioral analysis to detect malware, trojans, and viruses.
+                        </p>
+                        <div class="action-badge">Multi-Engine</div>
+                    </a>
+
+                    <!-- Network Scan -->
+                    <a href="network-scan.html" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>Network Security Scan</h3>
+                        <p class="tool-definition">
+                            <strong>Definition:</strong> Complete network security assessment and analysis
+                        </p>
+                        <p class="tool-details">
+                            <strong>What it does:</strong> Scans network devices, checks for open ports, analyzes connection patterns, detects intrusions, and identifies vulnerable network services.
+                        </p>
+                        <div class="action-badge">Advanced</div>
+                    </a>
+
+                    <!-- Privacy Audit -->
+                    <a href="privacy-audit.html" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Privacy & Data Audit</h3>
+                        <p class="tool-definition">
+                            <strong>Definition:</strong> Comprehensive privacy settings and data protection review
+                        </p>
+                        <p class="tool-details">
+                            <strong>What it does:</strong> Audits browser privacy settings, checks for tracking cookies, reviews data sharing permissions, and identifies privacy vulnerabilities in your digital footprint.
+                        </p>
+                        <div class="action-badge">GDPR Ready</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Building Trust Section -->
+        <section class="trust-section section" aria-labelledby="trust-title">
+            <div class="container">
+                <h2 class="section-title" id="trust-title">Building Trust Through Robust Security</h2>
+                <p class="section-subtitle">Our comprehensive approach ensures your digital safety across all platforms</p>
+                
+                <div class="trust-grid">
+                    <div class="trust-card">
+                        <div class="trust-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>Lower Space Plate</h3>
+                        <p>Minimal resource footprint with maximum security coverage</p>
+                    </div>
+                    
+                    <div class="trust-card">
+                        <div class="trust-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3>Oak Remind Conception</h3>
+                        <p>Strong, resilient security principles that withstand evolving threats</p>
+                    </div>
+                    
+                    <div class="trust-card">
+                        <div class="trust-icon">
+                            <i class="fas fa-star-of-life"></i>
+                        </div>
+                        <h3>Emergency Star</h3>
+                        <p>24/7 emergency response and rapid threat mitigation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="dashboard section" aria-labelledby="dashboard-title">
+            <div class="container">
+                <h2 class="section-title" id="dashboard-title">Security Dashboard</h2>
+                <p class="section-subtitle">Real-time overview of your security status and recent activities</p>
+                
+                <div class="dashboard-grid">
+                    <!-- Security Status Card -->
+                    <div class="dashboard-card main-card">
+                        <div class="card-header">
+                            <h3>Security Overview</h3>
+                            <div class="card-badge positive">
+                                <i class="fas fa-check"></i>
+                                Protected
+                            </div>
+                        </div>
+                        <div class="security-overview">
+                            <div class="overview-metrics">
+                                <div class="overview-metric">
+                                    <div class="metric-value">12</div>
+                                    <div class="metric-label">Scans Completed</div>
+                                </div>
+                                <div class="overview-metric">
+                                    <div class="metric-value">2</div>
+                                    <div class="metric-label">Threats Blocked</div>
+                                </div>
+                                <div class="overview-metric">
+                                    <div class="metric-value">85%</div>
+                                    <div class="metric-label">System Health</div>
+                                </div>
+                            </div>
+                            <div class="security-status">
+                                <div class="status-indicator active">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Real-time Protection: ACTIVE</span>
+                                </div>
+                                <div class="status-indicator active">
+                                    <i class="fas fa-sync-alt"></i>
+                                    <span>Auto Updates: ENABLED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Recent Activity</h3>
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <div class="activity-list" id="recentActivityList">
+                            <div class="activity-item">
+                                <div class="activity-icon positive">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <span>System scan completed - No threats found</span>
+                                    <small>2 minutes ago</small>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <span>Phishing attempt blocked</span>
+                                    <small>1 hour ago</small>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon info">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <span>Content analysis completed</span>
+                                    <small>3 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon positive">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <span>Security definitions updated</span>
+                                    <small>5 hours ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Quick Stats</h3>
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="quick-stats">
+                            <div class="quick-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-value">8</div>
+                                    <div class="stat-label">System Scans</div>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-value">3</div>
+                                    <div class="stat-label">Websites Checked</div>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <div class="stat-value">5</div>
+                                    <div class="stat-label">Files Analyzed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-time Threat Intelligence -->
+        <section id="threat-intel" class="threat-intel-section section" aria-labelledby="threat-intel-title">
+            <div class="container">
+                <h2 class="section-title" id="threat-intel-title">Global Threat Intelligence</h2>
+                <p class="section-subtitle">Real-time cybersecurity threats and global security alerts</p>
+
+                <div class="threat-intel-grid" id="threatIntelGrid">
+                    <div class="threat-card critical">
+                        <div class="threat-header">
+                            <h3>Ransomware Alert</h3>
+                            <div class="threat-severity severity-critical">CRITICAL</div>
+                        </div>
+                        <p>New ransomware variant targeting healthcare systems and critical infrastructure</p>
+                        <div class="threat-meta">
+                            <span><i class="fas fa-globe-americas"></i> Global</span>
+                            <span><i class="fas fa-clock"></i> 2 hours ago</span>
+                            <span><i class="fas fa-users"></i> 1,250 affected</span>
+                        </div>
+                    </div>
+
+                    <div class="threat-card high">
+                        <div class="threat-header">
+                            <h3>Phishing Campaign</h3>
+                            <div class="threat-severity severity-high">HIGH</div>
+                        </div>
+                        <p>Sophisticated phishing emails impersonating popular cloud services and banking portals</p>
+                        <div class="threat-meta">
+                            <span><i class="fas fa-globe-americas"></i> North America</span>
+                            <span><i class="fas fa-clock"></i> 4 hours ago</span>
+                            <span><i class="fas fa-users"></i> 8,500 affected</span>
+                        </div>
+                    </div>
+
+                    <div class="threat-card medium">
+                        <div class="threat-header">
+                            <h3>Malware Distribution</h3>
+                            <div class="threat-severity severity-medium">MEDIUM</div>
+                        </div>
+                        <p>Trojan horse malware disguised as software cracks and game repacks</p>
+                        <div class="threat-meta">
+                            <span><i class="fas fa-globe-americas"></i> Global</span>
+                            <span><i class="fas fa-clock"></i> 1 hour ago</span>
+                            <span><i class="fas fa-users"></i> 3,200 affected</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="threat-stats" id="globalThreatStats">
+                    <div class="threat-stat">
+                        <div class="threat-stat-value">3</div>
+                        <div class="threat-stat-label">Active Threats</div>
+                    </div>
+                    <div class="threat-stat">
+                        <div class="threat-stat-value">1</div>
+                        <div class="threat-stat-label">Critical</div>
+                    </div>
+                    <div class="threat-stat">
+                        <div class="threat-stat-value">1</div>
+                        <div class="threat-stat-label">High Risk</div>
+                    </div>
+                    <div class="threat-stat">
+                        <div class="threat-stat-value">2</div>
+                        <div class="threat-stat-label">Security Alerts</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Score Section -->
+        <section id="security-score" class="security-score-section section" aria-labelledby="security-score-title">
+            <div class="container">
+                <h2 class="section-title" id="security-score-title">Your Security Score</h2>
+                <p class="section-subtitle">Comprehensive assessment of your current security posture</p>
+
+                <div class="score-display">
+                    <div class="score-main">
+                        <div class="score-circle-large">
+                            <div class="score-value-large">85</div>
+                        </div>
+                        <div class="score-info">
+                            <h3>Good Security</h3>
+                            <p>Your security practices are above average with room for improvement</p>
+                        </div>
+                    </div>
+                    
+                    <div class="score-breakdown">
+                        <div class="score-factor">
+                            <div class="factor-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="factor-details">
+                                <h4>Protection Level</h4>
+                                <p>Real-time threat detection enabled</p>
+                            </div>
+                            <div class="factor-score positive">+20</div>
+                        </div>
+                        
+                        <div class="score-factor">
+                            <div class="factor-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <div class="factor-details">
+                                <h4>Scan Activity</h4>
+                                <p>Regular security scans performed</p>
+                            </div>
+                            <div class="factor-score positive">+15</div>
+                        </div>
+                        
+                        <div class="score-factor">
+                            <div class="factor-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="factor-details">
+                                <h4>Threat Exposure</h4>
+                                <p>Some threats detected recently</p>
+                            </div>
+                            <div class="factor-score negative">-10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Section -->
+        <section id="training" class="training-section section" aria-labelledby="training-title">
+            <div class="container">
+                <h2 class="section-title" id="training-title">Security Awareness Training</h2>
+                <p class="section-subtitle">Learn essential cybersecurity skills through interactive modules</p>
+
+                <div class="training-modules" id="trainingModules">
+                    <div class="training-module">
+                        <div class="module-header">
+                            <div class="module-icon">
+                                <i class="fas fa-fish"></i>
+                            </div>
+                            <div class="module-info">
+                                <h3>Phishing Awareness</h3>
+                                <p>Learn to identify and avoid phishing attacks</p>
+                            </div>
+                        </div>
+                        <div class="module-details">
+                            <p><strong>Topics covered:</strong> Email phishing, smishing, vishing, social engineering</p>
+                            <p><strong>Duration:</strong> 10-15 minutes</p>
+                            <p><strong>Skill level:</strong> Beginner</p>
+                        </div>
+                        <div class="module-actions">
+                            <button class="btn btn-primary" onclick="cortexIntell.startTraining('phishing-101')">
+                                Start Training
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="training-module">
+                        <div class="module-header">
+                            <div class="module-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="module-info">
+                                <h3>Malware Protection</h3>
+                                <p>Understand and defend against malware threats</p>
+                            </div>
+                        </div>
+                        <div class="module-details">
+                            <p><strong>Topics covered:</strong> Viruses, trojans, ransomware, protection methods</p>
+                            <p><strong>Duration:</strong> 8-12 minutes</p>
+                            <p><strong>Skill level:</strong> Beginner</p>
+                        </div>
+                        <div class="module-actions">
+                            <button class="btn btn-primary" onclick="cortexIntell.startTraining('malware-basics')">
+                                Start Training
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="training-module">
+                        <div class="module-header">
+                            <div class="module-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="module-info">
+                                <h3>Password Security</h3>
+                                <p>Create and manage strong passwords effectively</p>
+                            </div>
+                        </div>
+                        <div class="module-details">
+                            <p><strong>Topics covered:</strong> Password creation, managers, 2FA, best practices</p>
+                            <p><strong>Duration:</strong> 7-10 minutes</p>
+                            <p><strong>Skill level:</strong> Beginner</p>
+                        </div>
+                        <div class="module-actions">
+                            <button class="btn btn-primary" onclick="cortexIntell.startTraining('password-security')">
+                                Start Training
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="training-question-container" id="trainingQuestionContainer" style="display: none;">
+                    <!-- Training questions will appear here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon" aria-hidden="true">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <span>Cortex-Intell</span>
+                    </div>
+                    <p>Advanced AI-powered cyber threat intelligence platform providing enterprise-grade security solutions for modern digital threats.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Security Tools</h4>
+                        <a href="instant-scan.html">System Scanner</a>
+                        <a href="website-check.html">Website Analysis</a>
+                        <a href="file-analysis.html">Malware Detection</a>
+                        <a href="network-scan.html">Network Security</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Resources</h4>
+                        <a href="#threat-intel">Threat Intelligence</a>
+                        <a href="#training">Security Training</a>
+                        <a href="#">Security Blog</a>
+                        <a href="#">Documentation</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Contact Security Team</a>
+                        <a href="#">Status</a>
+                        <a href="#">Report False Positive</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cortex-Intell. Advanced Cyber Threat Intelligence Platform - PBL Project Demonstration.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load JavaScript files -->
+    <script src="database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Overview | Cortex-Intell</title>
+    <meta name="description" content="Learn how to use Cortex-Intell's AI-powered cybersecurity tools and features">
+    <meta name="author" content="Cortex-Intell Security">
+    
+    <style>
+        /* Platform Overview Styles */
+        :root {
+            --primary: #00d4ff;
+            --primary-dark: #0099cc;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-card: rgba(26, 26, 26, 0.95);
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #666666;
+            --border-light: rgba(255, 255, 255, 0.1);
+            --radius-lg: 14px;
+            --radius-xl: 18px;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: var(--space-4) var(--space-6);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-primary);
+            font-size: 1.2rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3) var(--space-6);
+            background: transparent;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--primary);
+            color: var(--bg-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: var(--space-16) 0 var(--space-12);
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(26, 26, 26, 0.9));
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-3);
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+            padding: var(--space-2) var(--space-4);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--space-6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--space-6);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Platform Overview Content */
+        .overview-section {
+            padding: var(--space-16) 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--space-8);
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-12);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-8);
+            margin-bottom: var(--space-16);
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-card), var(--shadow-glow);
+        }
+
+        .tool-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-primary);
+            font-size: 1.8rem;
+            margin-bottom: var(--space-6);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .tool-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            color: var(--text-primary);
+        }
+
+        .tool-card p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-4);
+            line-height: 1.6;
+        }
+
+        .tool-features {
+            margin: var(--space-6) 0;
+        }
+
+        .tool-features h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: var(--space-3);
+            font-weight: 600;
+        }
+
+        .tool-features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tool-features li {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-2);
+            padding-left: var(--space-4);
+            position: relative;
+        }
+
+        .tool-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .tool-actions {
+            margin-top: var(--space-6);
+            display: flex;
+            gap: var(--space-4);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3) var(--space-6);
+            border: none;
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 44px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--bg-primary);
+        }
+
+        /* Getting Started Section */
+        .getting-started {
+            background: var(--bg-secondary);
+            padding: var(--space-16) 0;
+            border-radius: var(--radius-xl);
+            margin: var(--space-16) 0;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: var(--space-6);
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+            color: var(--text-primary);
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+            padding: var(--space-12) 0 var(--space-8);
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                align-self: center;
+            }
+            
+            .tool-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="main.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span>Cortex-Intell</span>
+            </a>
+            <a href="main.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <i class="fas fa-book"></i>
+                Platform Guide
+            </div>
+            <h1 class="hero-title">Platform Overview</h1>
+            <p class="hero-description">
+                Learn how to effectively use all Cortex-Intell security tools and features to protect your digital environment from cyber threats.
+            </p>
+        </div>
+    </section>
+
+    <!-- Platform Overview Content -->
+    <section class="overview-section">
+        <div class="container">
+            <h2 class="section-title">Security Tools & Features</h2>
+            <p class="section-subtitle">
+                Explore our comprehensive suite of AI-powered security tools designed to protect you from various cyber threats.
+            </p>
+
+            <div class="tools-grid">
+                <!-- Instant System Scan -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant System Scan</h3>
+                    <p>Quick comprehensive security assessment of your entire system for potential threats and vulnerabilities.</p>
+                    
+                    <div class="tool-features">
+                        <h4>What it scans:</h4>
+                        <ul>
+                            <li>System processes and services</li>
+                            <li>Registry entries and configurations</li>
+                            <li>Running applications and services</li>
+                            <li>Security settings and policies</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-actions">
+                        <a href="instant-scan.html" class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            Use Tool
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Website Security Analysis -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Website Security Analysis</h3>
+                    <p>Deep security analysis of any website URL to check for malware, phishing attempts, and security vulnerabilities.</p>
+                    
+                    <div class="tool-features">
+                        <h4>What it checks:</h4>
+                        <ul>
+                            <li>Malware and malicious scripts</li>
+                            <li>Phishing and scam indicators</li>
+                            <li>SSL certificate validity</li>
+                            <li>Security headers and configurations</li>
+                            <li>Blacklist status</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-actions">
+                        <a href="website-check.html" class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            Use Tool
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Content Safety Scanner -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Content Safety Scanner</h3>
+                    <p>AI-powered content analysis for detecting harmful content, hate speech, and inappropriate material.</p>
+                    
+                    <div class="tool-features">
+                        <h4>What it detects:</h4>
+                        <ul>
+                            <li>Hate speech and offensive language</li>
+                            <li>Cyberbullying and harassment</li>
+                            <li>Inappropriate or explicit content</li>
+                            <li>Threatening or violent language</li>
+                            <li>Toxic communication patterns</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-actions">
+                        <a href="content-analyzer.html" class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            Use Tool
+                        </a>
+                    </div>
+                </div>
+
+                <!-- File Malware Detection -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-upload"></i>
+                    </div>
+                    <h3>File Malware Detection</h3>
+                    <p>Comprehensive malware scanning for files and archives using multiple antivirus engines and behavioral analysis.</p>
+                    
+                    <div class="tool-features">
+                        <h4>What it analyzes:</h4>
+                        <ul>
+                            <li>Executable files (.exe, .bat, .cmd)</li>
+                            <li>Documents and archives</li>
+                            <li>Script files (.js, .vbs, .ps1)</li>
+                            <li>File signatures and behavior</li>
+                            <li>Potential ransomware indicators</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-actions">
+                        <a href="file-analysis.html" class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            Use Tool
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Network Security Scan -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Network Security Scan</h3>
+                    <p>Complete network security assessment and analysis to identify vulnerabilities and suspicious activities.</p>
+                    
+                    <div class="tool-features">
+                        <h4>What it examines:</h4>
+                        <ul>
+                            <li>Network devices and connections</li>
+                            <li>Open ports and services</li>
+                            <li>Firewall configurations</li>
+                            <li>Intrusion detection</li>
+                            <li>Vulnerable network services</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-actions">
+                        <a href="network-scan.html" class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            Use Tool
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Privacy & Data Audit -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Privacy & Data Audit</h3>
+                    <p>Comprehensive privacy settings and data protection review to identify and fix privacy vulnerabilities.</p>
+                    
+                    <div class="tool-features">
+                        <h4>What it reviews:</h4>
+                        <ul>
+                            <li>Browser privacy settings</li>
+                            <li>Tracking cookies and scripts</li>
+                            <li>Data sharing permissions</li>
+                            <li>Location and device access</li>
+                            <li>GDPR compliance indicators</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-actions">
+                        <a href="privacy-audit.html" class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            Use Tool
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Getting Started Section -->
+            <div class="getting-started">
+                <h2 class="section-title">Getting Started</h2>
+                <p class="section-subtitle">
+                    Follow these steps to maximize your security with Cortex-Intell
+                </p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Run Initial System Scan</h3>
+                            <p>Start with the Instant System Scan to get a baseline assessment of your current security status. This will identify any immediate threats or vulnerabilities that need attention.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Check Suspicious Websites</h3>
+                            <p>Use the Website Security Analysis tool to verify any suspicious URLs before visiting them. This is especially important for links received via email or social media.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Scan Downloaded Files</h3>
+                            <p>Before opening any downloaded files, use the File Malware Detection tool to ensure they're safe. This applies to software, documents, and any files from untrusted sources.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Complete Security Training</h3>
+                            <p>Visit the Training section to complete interactive security awareness modules. These will help you recognize and avoid common cyber threats like phishing and malware.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Regular Privacy Audits</h3>
+                            <p>Perform regular privacy audits to ensure your browser settings and data sharing practices align with your privacy preferences and comply with regulations like GDPR.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Cortex-Intell. Advanced Cyber Threat Intelligence Platform - PBL Project Demonstration.</p>
+        </div>
+    </footer>
+</body>
+</html>
